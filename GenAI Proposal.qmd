@@ -25,6 +25,19 @@ header-includes:
     - \usepackage[section]{placeins}
 ---
 
+Some Notes 
+- Generate manifestos, or public opinions from the Four Major Generative AI's -- CoPilot, ChatGPT, Claude and Gemini
+- Either give the AI's profiles, or give them political parties/identites, and look at the Cosine similarity of all the AI's, and all the identities, to see which are most similar / most different / most liberal / most republican. 
+- This requires some nuanced content anaylsis because some words that are apolitical, but political jargon may get used?
+- using TF-IDF?
+- Could go back to using Profiles, with the vector space model, but then have to create typologies on what is liberal, and what is conserative?
+- I think profiles might be too much data, because then there is a lot of confounding variables?
+- Maybe just "What would a democrat/republican think of X?" 
+- Could ask key/specific questions on big ticket issues like DEI Immigration Abortion Democracy White supremacy etc?
+- need to do some lit review / collect lit
+- 
+
+
 ## Project Idea 
 
 
