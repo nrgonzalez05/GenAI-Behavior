@@ -1,5 +1,5 @@
 ---
-title: "GenAI Proposoal"
+title: "How Do Different Generative AI assumes political ideologies of randomly generated profile of Americans?"
 author:
     - 'Nicholas R. Gonzalez ^[PhD Student. Northwestern University. Email: <NicholasGonzalez2029@u.northwestern.edu>]'
     - "Tanner Bentley^[PhD Student, Northwestern University, Email : <TannerBentley2029@u.northwestern.edu>]"
