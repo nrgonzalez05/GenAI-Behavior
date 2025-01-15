@@ -25,28 +25,64 @@ header-includes:
     - \usepackage[section]{placeins}
 ---
 
-Some Notes 
-- Generate manifestos, or public opinions from the Four Major Generative AI's -- CoPilot, ChatGPT, Claude and Gemini
-- Either give the AI's profiles, or give them political parties/identites, and look at the Cosine similarity of all the AI's, and all the identities, to see which are most similar / most different / most liberal / most republican. 
-- This requires some nuanced content anaylsis because some words that are apolitical, but political jargon may get used?
-- using TF-IDF?
-- Could go back to using Profiles, with the vector space model, but then have to create typologies on what is liberal, and what is conserative?
-- I think profiles might be too much data, because then there is a lot of confounding variables?
-- Maybe just "What would a democrat/republican think of X?" 
-- Could ask key/specific questions on big ticket issues like DEI Immigration Abortion Democracy White supremacy etc?
-- need to do some lit review / collect lit
-- 
+
+
 
 
 ## Project Idea 
 
+The goal of this project by Nicholas R. Gonzalez & Tanner Bentley is to attempt to answer the question _How Do Different Generative AI assumes political ideologies of randomly generated profile of Americans?_ In order to answer this question, we will give the four most popular Generative AI softwares, also known as GenAI's (or Large-Language Models), which are ChatGPT, Claude, Microsoft CoPilot and Google Gemini, ten randomly generated profiles. These profiles will contain demographic such as a Name, income status, race and if they live in a urban or rural location. Then, representing these profiles, each GenAI will be asked to give a manifesto, on the current state of U.S. politics. While this will not be an exhaustive study, it is hope that this will begin to illuminate the similarities, and differences of how different GenAI's view the political opinions of certain demographics. 
+
 
 ## Methods 
+
+There are a few ways to examine the synthetic data that will be produced for this project. The first way we intend to this is to examine the cosine similarity of the answers. This will allow us to get an overview of how similar the answers are, of each profile, and of each profile across every GenAI. The next way this data will be examined is through topic modeling. This will allow us to see what topics were most salient in each manifesto. Also, with the amount of profiles being non-exhaustive, it will be possible to pull potential quotes from the manifesto's directly, to give additional context. 
+
 
 
 ## Implications 
 
+The implications of this project are still tentative, but the use of GenAI's, or Large-Language Model's over the last two years has explored People now use these programs for everyday questions. Understanding how GenAI assumes political opinion, or ideologies, may begin to open the door on how they affect politics. Also, what the Generative AI's discuss in their manifesto may present details about what AI does or does not assume about peoples political opinion(s) based on their demographic data. Which depending on the results, can have broad implications about how we view GenAI as a neutral entity. 
 
 ## Timeline 
+
+```{r, echo = FALSE}
+
+# Install required packages if not already installed
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+
+# Load ggplot2 library
+library(ggplot2)
+
+# Create a data frame for the timeline
+project_timeline <- data.frame(
+  Task = c(
+    "Data Collection",
+    "Data Cleaning",
+    "Analyze Data & Infer Results",
+    "Visualize & Present Results",
+    "Begin Writing Paper",
+    "Work on Presentation & Edit Paper"
+  ),
+  Start_Week = c(1, 2, 3, 5, 6, 7),
+  End_Week = c(1, 2, 4, 5, 6, 10)  # Adjusted for Week 10 as the end of editing
+)
+
+# Convert Task into a factor to control the order of tasks
+project_timeline$Task <- factor(project_timeline$Task, levels = rev(project_timeline$Task))
+
+# Create the Gantt chart
+ggplot(project_timeline, aes(xmin = Start_Week, xmax = End_Week, y = Task, fill = Task)) +
+  geom_rect(aes(ymin = as.numeric(Task) - 0.4, ymax = as.numeric(Task) + 0.4), color = "black") +
+  labs(title = "Project Timeline",
+       x = "Week",
+       y = "Tasks") +
+  scale_x_continuous(breaks = seq(1, 10, 1)) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+
 
 
