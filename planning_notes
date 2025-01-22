@@ -1,3 +1,31 @@
 Planning and Notes 
 
 
+Organizational Things 
+  - Seperate Folders for Claude / ChatGPT / Gemini / CoPilot Data 
+  - This is a demographic randomizer (https://an.owomoyela.net/fun/demographics_generator, we can set %'s to population % from most recent census?) 
+  - Make a list of methods we plan to use or try / explore?
+    - Cosine Similarity 
+    - word2vec
+    - Topic modeling 
+  - Sample Size confirmation?
+    - 10 Profiles 
+    - Manifesto, or series of questions? 
+      - If manifesto, 500 or 750 words? 
+      - Series of questions, 250 words each tops? 
+      - Manifesto on a topic issue, or issue(s), or freeform?
+  - Probably have to read that article Oscar mentioned at some point, and its footnotes for more literature.
+  - Also have to find some pol behavior articles to conversate with. 
+  
+  
+  Question & Manifesto Ideas 
+    - If we do questions, we can do use this (https://apnorc.org/projects/2025-the-publics-priorities-and-expectations/) as a reference/gauge for the public's priorities, or we can use ANES or CCES which are surveys.
+    - I am thinking five questions however, on five unqiue topics if we do questions. 
+      - "What is your stance on abortion?"
+      - "What is your stance on Obama Care?"
+      - "How your characterize the current immigration policy in the United States?"
+      - "Do you believe that there is increased racial tension in the United States, and if so what are the causes?"
+      - "Please explain your positioning on Trans-rights?"
+      
+Friday we probably have to address all things, almost in final, and begin setting up the AI Accounts and get the demographic profiles. 
+  
