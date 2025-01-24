@@ -1,0 +1,32 @@
+CONFIRMING PROJECT ITEMS 
+
+10 Profiles [Done, randomly generated with ChatGPT]
+
+============================================================
+
+
+No Names, too many confounding variables alerady. 
+
+============================================================
+
+
+Questions / Date
+
+5 questions per profile, 250 words each, 1 Manifesto per profile 1000 words. Per each GenAI, so 40. This is 66,000 words. 
+
+============================================================
+
+List of Methods / Things to Try
+- Cosine Similarity
+- Bag of Words, to see what words were most common. 
+- word2vec
+
+============================================================
+
+Data Analysis 
+- Words that are most common / frequently used.
+- Similarity between documents 
+- Most important or salient topics 
+- Context similarity word2vec 
+- Use dummy profile, to explore AI simlarity. 
+
