@@ -1,0 +1,204 @@
+```{r}
+library(stringr)
+library(tidyr)
+library(quanteda)
+library(quanteda.textstats)
+library(readtext)
+library(dplyr)
+library(lsa)
+library(tm)
+library(topicmodels)
+library(tidyverse)
+library(tidytext)
+library(wordcloud2)
+library(reshape2)
+library(ggwordcloud)
+library(R.utils)
+library(ggplot2)
+```
+
+
+```{r}
+d_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/d_gpt_mani.txt"), collapse = "\n")
+
+p1_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p1_gpt_mani.txt"), collapse = "\n")
+
+p2_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p2_gpt_mani.txt"), collapse = "\n")
+
+p3_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p3_gpt_mani.txt"), collapse = "\n")
+
+p4_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p4_gpt_mani.txt"), collapse = "\n")
+
+p5_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p5_gpt_mani.txt"), collapse = "\n")
+
+p6_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p6_gpt_mani.txt"), collapse = "\n")
+
+p7_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p7_gpt_mani.txt"), collapse = "\n")
+
+p8_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p8_gpt_mani.txt"), collapse = "\n")
+
+p9_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p9_gpt_mani.txt"), collapse = "\n")
+
+p10_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p10_gpt_mani.txt"), collapse = "\n")
+
+d_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/d_cop_mani.txt"), collapse = "\n")
+
+p1_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p1_cop_mani.txt"), collapse = "\n")
+
+p2_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p2_cop_mani.txt"), collapse = "\n")
+
+p3_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p3_cop_mani.txt"), collapse = "\n")
+
+p4_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p4_cop_mani.txt"), collapse = "\n")
+
+p5_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p5_cop_mani.txt"), collapse = "\n")
+
+p6_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p6_cop_mani.txt"), collapse = "\n")
+
+p7_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p7_cop_mani.txt"), collapse = "\n")
+
+p8_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p8_cop_mani.txt"), collapse = "\n")
+
+p9_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p9_cop_mani.txt"), collapse = "\n")
+
+p10_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p10_cop_mani.txt"), collapse = "\n")
+
+gpt_corpus <- corpus(c("d_gpt_mani" = d_gpt_mani, 
+                       "p1_gpt_mani" = p1_gpt_mani, 
+                       "p2_gpt_mani" = p2_gpt_mani, 
+                       "p3_gpt_mani" = p3_gpt_mani, 
+                       "p4_gpt_mani" = p4_gpt_mani, 
+                       "p5_gpt_mani" = p5_gpt_mani, 
+                       "p6_gpt_mani" = p6_gpt_mani, 
+                       "p7_gpt_mani" = p7_gpt_mani, 
+                       "p8_gpt_mani" = p8_gpt_mani, 
+                       "p9_gpt_mani" = p9_gpt_mani, 
+                       "p10_gpt_mani" = p10_gpt_mani), 
+                     doc_id = c("d_gpt_mani",
+                                  "p1_gpt_mani", 
+                                  "p2_gpt_mani",
+                                  "p3_gpt_mani", 
+                                  "p4_gpt_mani", 
+                                  "p5_gpt_mani", 
+                                  "p6_gpt_mani", 
+                                  "p7_gpt_mani", 
+                                  "p8_gpt_mani", 
+                                  "p9_gpt_mani", 
+                                  "p10_gpt_mani")
+                     )
+
+cop_corpus <- corpus(c("d_cop_mani" = d_cop_mani, 
+                       "p1_cop_mani" = p1_cop_mani, 
+                       "p2_cop_mani" = p2_cop_mani, 
+                       "p3_cop_mani" = p3_cop_mani, 
+                       "p4_cop_mani" = p4_cop_mani, 
+                       "p5_cop_mani" = p5_cop_mani, 
+                       "p6_cop_mani" = p6_cop_mani, 
+                       "p7_cop_mani" = p7_cop_mani, 
+                       "p8_cop_mani" = p8_cop_mani, 
+                       "p9_cop_mani" = p9_cop_mani, 
+                       "p10_cop_mani" = p10_cop_mani), 
+                     doc_id = c("d_gpt_mani",
+                                  "p1_cop_mani", 
+                                  "p2_cop_mani",
+                                  "p3_cop_mani", 
+                                  "p4_cop_mani", 
+                                  "p5_cop_mani", 
+                                  "p6_cop_mani", 
+                                  "p7_cop_mani", 
+                                  "p8_cop_mani", 
+                                  "p9_cop_mani", 
+                                  "p10_cop_mani")
+                     )
+```
+
+```{r}
+gpt_df <- data.frame(doc_id = docnames(gpt_corpus), text = gpt_corpus, stringsAsFactors = FALSE)
+gpt_df$question <- "Manifesto"
+gpt_df$ai_model <- "ChatGPT"
+
+profile <- NULL
+for (i in 1:nrow(gpt_df)) {
+  profile[i] <- str_extract(gpt_df$doc_id[i], "^[^_]+")
+}
+gpt_df$profile_id <- profile 
+
+rownames(gpt_df) <- NULL
+
+gpt_df <- gpt_df %>%
+  mutate(
+    race = case_when(
+      profile_id %in% c("d", "p4") ~ "Asian",
+      profile_id %in% c("p1", "p5", "p9") ~ "White",
+      profile_id %in% c("p2", "p8") ~ "Black or African American",
+      profile_id %in% c("p3", "p10") ~ "Hispanic or Latino",
+      profile_id %in% c("p6") ~ "American Indian or Alaska Native",
+      profile_id %in% c("p7") ~ "Native Hawaiian or Other Pacific Islander",
+      TRUE ~ NA_character_
+    ),
+    gender = case_when(
+      profile_id %in% c("p2", "p4", "p7", "p10") ~ "Male",
+      profile_id %in% c("p1", "p3", "p6", "p9") ~ "Female",
+      profile_id %in% c("d", "p5", "p8") ~ "Non-Binary",
+      TRUE ~ NA_character_
+    ),
+    urban = case_when(
+      profile_id %in% c("p1", "p2", "p3", "p4", "p7", "p9", "p10") ~ "Urban",
+      profile_id %in% c("d", "p5", "p6", "p8") ~ "Rural",
+      TRUE ~ NA_character_
+    ), 
+    income = case_when(
+      profile_id %in% c("d", "p4", "p9") ~ "High",
+      profile_id %in% c("p1", "p5", "p7", "p10") ~ "Middle",
+      profile_id %in% c("p2", "p3", "p6", "p8") ~ "Low",
+      TRUE ~ NA_character_
+    )
+  )
+
+save(gpt_df, file = "gpt_corpus.RData")
+
+copilot_df <- data.frame(doc_id = docnames(cop_corpus), text = cop_corpus, stringsAsFactors = FALSE)
+copilot_df$question <- "Manifesto"
+copilot_df$ai_model <- "Copilot"
+
+profile <- NULL
+for (i in 1:nrow(copilot_df)) {
+  profile[i] <- str_extract(copilot_df$doc_id[i], "^[^_]+")
+}
+copilot_df$profile_id <- profile 
+
+rownames(copilot_df) <- NULL
+
+copilot_df <- copilot_df %>%
+  mutate(
+    race = case_when(
+      profile_id %in% c("d", "p4") ~ "Asian",
+      profile_id %in% c("p1", "p5", "p9") ~ "White",
+      profile_id %in% c("p2", "p8") ~ "Black or African American",
+      profile_id %in% c("p3", "p10") ~ "Hispanic or Latino",
+      profile_id %in% c("p6") ~ "American Indian or Alaska Native",
+      profile_id %in% c("p7") ~ "Native Hawaiian or Other Pacific Islander",
+      TRUE ~ NA_character_
+    ),
+    gender = case_when(
+      profile_id %in% c("p2", "p4", "p7", "p10") ~ "Male",
+      profile_id %in% c("p1", "p3", "p6", "p9") ~ "Female",
+      profile_id %in% c("d", "p5", "p8") ~ "Non-Binary",
+      TRUE ~ NA_character_
+    ),
+    urban = case_when(
+      profile_id %in% c("p1", "p2", "p3", "p4", "p7", "p9", "p10") ~ "Urban",
+      profile_id %in% c("d", "p5", "p6", "p8") ~ "Rural",
+      TRUE ~ NA_character_
+    ), 
+    income = case_when(
+      profile_id %in% c("d", "p4", "p9") ~ "High",
+      profile_id %in% c("p1", "p5", "p7", "p10") ~ "Middle",
+      profile_id %in% c("p2", "p3", "p6", "p8") ~ "Low",
+      TRUE ~ NA_character_
+    )
+  )
+
+save(copilot_df, file = "copilot_corpus.RData")
+```
+
