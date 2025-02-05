@@ -19,49 +19,49 @@ library(ggplot2)
 
 
 ```{r}
-d_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/d_gpt_mani"), collapse = "\n")
+d_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/d_gpt_mani.txt"), collapse = "\n")
 
-p1_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p1_gpt_mani"), collapse = "\n")
+p1_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p1_gpt_mani.txt"), collapse = "\n")
 
-p2_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p2_gpt_mani"), collapse = "\n")
+p2_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p2_gpt_mani.txt"), collapse = "\n")
 
-p3_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p3_gpt_mani"), collapse = "\n")
+p3_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p3_gpt_mani.txt"), collapse = "\n")
 
-p4_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p4_gpt_mani"), collapse = "\n")
+p4_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p4_gpt_mani.txt"), collapse = "\n")
 
-p5_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p5_gpt_mani"), collapse = "\n")
+p5_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p5_gpt_mani.txt"), collapse = "\n")
 
-p6_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p6_gpt_mani"), collapse = "\n")
+p6_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p6_gpt_mani.txt"), collapse = "\n")
 
-p7_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p7_gpt_mani"), collapse = "\n")
+p7_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p7_gpt_mani.txt"), collapse = "\n")
 
-p8_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p8_gpt_mani"), collapse = "\n")
+p8_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p8_gpt_mani.txt"), collapse = "\n")
 
-p9_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p9_gpt_mani"), collapse = "\n")
+p9_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p9_gpt_mani.txt"), collapse = "\n")
 
-p10_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p10_gpt_mani"), collapse = "\n")
+p10_gpt_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/gpt_docs/Manifesto/p10_gpt_mani.txt"), collapse = "\n")
 
-d_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/d_cop_mani"), collapse = "\n")
+d_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/d_cop_mani.txt"), collapse = "\n")
 
-p1_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p1_cop_mani"), collapse = "\n")
+p1_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p1_cop_mani.txt"), collapse = "\n")
 
-p2_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p2_cop_mani"), collapse = "\n")
+p2_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p2_cop_mani.txt"), collapse = "\n")
 
-p3_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p3_cop_mani"), collapse = "\n")
+p3_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p3_cop_mani.txt"), collapse = "\n")
 
-p4_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p4_cop_mani"), collapse = "\n")
+p4_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p4_cop_mani.txt"), collapse = "\n")
 
-p5_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p5_cop_mani"), collapse = "\n")
+p5_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p5_cop_mani.txt"), collapse = "\n")
 
-p6_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p6_cop_mani"), collapse = "\n")
+p6_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p6_cop_mani.txt"), collapse = "\n")
 
-p7_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p7_cop_mani"), collapse = "\n")
+p7_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p7_cop_mani.txt"), collapse = "\n")
 
-p8_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p8_cop_mani"), collapse = "\n")
+p8_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p8_cop_mani.txt"), collapse = "\n")
 
-p9_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p9_cop_mani"), collapse = "\n")
+p9_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p9_cop_mani.txt"), collapse = "\n")
 
-p10_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p10_cop_mani"), collapse = "\n")
+p10_cop_mani <- paste(readLines("/Users/tannerbentley/Downloads/RStudio/Papers and Projects/Soci 476 Project/GenAI-Behavior/corpora/copilot_docs/Manifesto/p10_cop_mani.txt"), collapse = "\n")
 
 gpt_corpus <- corpus(c("d_gpt_mani" = d_gpt_mani, 
                        "p1_gpt_mani" = p1_gpt_mani, 
